@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animación en Forma de Parábola con Rotación</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            width: 250px;
+            margin-top: 10px;
+            margin-right: 5px;
+            border-radius: 25px;
+            border: 1px solid #ccc;
+        }
+
+        .consult-btn {
+            padding: 10px 15px;
+            color: white;
+            background-color: #e60000;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+        }
+
+        .falling-elements {
+            position: relative;
+            width: 800px;
+            height: 400px;
+            margin-top: 30px;
+            overflow: hidden;
+        }
+
+        .falling-element {
+            position: absolute;
+            padding: 10px 15px;
+            background-color: white;
+            color: #333;
+            border-radius: 25px;
+            font-size: 14px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            animation: fall 1.5s ease-out forwards;
+            transform-origin: center;
+            /* Rotación final específica para cada elemento */
+        }
+
+        /* Posiciones en parábola con rotación final */
+        .falling-element:nth-child(1) { top: 50%; left: 25%; animation-delay: 1.4s; --rotate-end: 20deg; }
+        .falling-element:nth-child(2) { top: 58%; left: 8%; animation-delay: 1.2s; --rotate-end: -10deg; }
+        .falling-element:nth-child(3) { top: 67%; left: 15%; animation-delay: 0.8s; --rotate-end: -5deg; }
+        .falling-element:nth-child(4) { top: 80%; left: 30%; animation-delay: 0s; --rotate-end: 10deg; }
+        
+        /* Elemento más bajo en el centro de la parábola */
+        .falling-element:nth-child(5) { top: 75%; left: 45%; animation-delay: 0.4s; --rotate-end: 25deg; }
+
+        /* Elementos hacia la derecha en forma ascendente */
+        .falling-element:nth-child(6) { top: 80%; left: 65.5%; animation-delay: 0.2s; --rotate-end: -15deg; }
+        .falling-element:nth-child(7) { top: 68%; left: 55%; animation-delay: 0.6s; --rotate-end: 8deg; }
+        .falling-element:nth-child(8) { top: 60%; left: 70%; animation-delay: 1s; --rotate-end: 5deg; }
+        .falling-element:nth-child(9) { top: 38%; left: 83%; animation-delay: 1.8s; --rotate-end: -40deg; }
+        .falling-element:nth-child(10) { top: 50%; left: 56%; animation-delay: 1.6s; --rotate-end: -20deg; }
+
+        @keyframes fall {
+            0% {
+                opacity: 0;
+                transform: translateY(-100px) scale(0.9) rotate(0deg);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1) rotate(var(--rotate-end));
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Stop Random Acts of Marketing.<br>Build a Team That Delivers Real Results.</h1>
+        <input type="text" placeholder="Search for any expertise...">
+        <button class="consult-btn">Free Consultation</button>
+        <p>Transform your marketing chaos into measurable growth</p>
+        <div class="falling-elements">
+            <div class="falling-element">Lack of in-house expertise?</div>
+            <div class="falling-element">Demanding expectations?</div>
+            <div class="falling-element">Wearing too many hats?</div>
+            <div class="falling-element">Managing multiple vendors?</div>
+            <div class="falling-element">Achieving half results?</div>
+            <div class="falling-element">Need better strategies?</div>
+            <div class="falling-element">Overwhelming workloads?</div>
+            <div class="falling-element">Unclear marketing goals?</div>
+            <div class="falling-element">Lack of innovation?</div>
+            <div class="falling-element">Inconsistent messaging?</div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+
+
